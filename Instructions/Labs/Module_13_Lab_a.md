@@ -1,9 +1,3 @@
----
-lab:
-    title: '13: Implement Azure Logic Apps integration with Azure Event Grid'
-    module: 'Module 13: Design an Application Architecture'
----
-
 # Lab: Implement Azure Logic Apps integration with Azure Event Grid
 # Student lab manual
 
