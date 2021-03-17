@@ -40,11 +40,6 @@ Windows Server admin credentials
 Estimated Time: 120 minutes
 
 
-## Lab Files
-
--  \\\\AZ304\\AllFiles\\Labs\\08\\azuredeploy30308suba.json
-
-
 ### Exercise 0: Prepare the lab environment
 
 The main tasks for this exercise are as follows:
@@ -56,38 +51,9 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager QuickStart template
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com) - `portal.azure.com`, and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Click on the Azure Portal icon on the LAB VM desktop and login with the Azure credentials from the Lab Environment output page.
 
-1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
-
-1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
-
-   >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
-
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ303\\AllFiles\Labs\\08\\azuredeploy30308suba.json** into the Cloud Shell home directory.
-
-1. From the Cloud Shell, run the following command to set a variable named location with an Azure Region near you (replace the '<Azure region>' placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer, for example 'eastus'):
-
-   ```powershell
-   $location = '<Azure region>'
-   ```
-
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-      
-1. From the Cloud Shell pane, run the following to create a resource group:
-
-   ```powershell
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30308subaDeployment `
-     -TemplateFile $HOME/azuredeploy30308suba.json `
-     -rgLocation $location `
-     -rgName 'az30308a-labRG'
-   ```
-
-1. In the Azure portal, close the **Cloud Shell** pane.
-
-1. From your lab computer, open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
+1. Open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
 
     ``` url
     https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network
@@ -98,7 +64,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308a-labRG** |
+    | Resource group | **az30308a-labRG-[DeploymentID]** |
     | Host Public IP Address Name | **az30308a-hv-vm-pip** |
     | Virtual Network Name | **az30308a-hv-vnet** |
     | Host Network Interface1Name | **az30308a-hv-vm-nic1** |
@@ -106,6 +72,8 @@ The main tasks for this exercise are as follows:
     | Host Virtual Machine Name | **az30308a-hv-vm** |
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
+
+    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
 
@@ -252,7 +220,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Create an Azure Migrate project
 
-1. Within the Remote Desktop session to **az30308a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Within the Remote Desktop session to **az30308a-hv-vm**, start Internet Explorer, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials from the Lab Environment output page.
 
 1. In the Azure portal, search for and select **Azure Migrate**, on the **Azure Migrate** blade, in the **Migration goals** section, select **Servers** and then select **Create Project**.
 
@@ -261,7 +229,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30308b-labRG** |
+    | Resource group | the name of a new resource group **az30308b-labRG-[DeploymentID]** |
     | Migrate project | **az30308b-migrate-project** |
     | Geography | the name of your country or a geographical region |
 
@@ -275,7 +243,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30308c-labRG** |
+    | Resource group | the name of a new resource group **az30308c-labRG-[DeploymentID]** |
     | Name | **az30308c-migration-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
@@ -299,7 +267,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG** |
+    | Resource group | **az30308c-labRG-[DeploymentID]** |
     | Name | **az30308c-test-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
@@ -323,7 +291,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG** |
+    | Resource group | **az30308c-labRG-[DeploymentID]** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits |
     | Location | the name of the Azure region in which you created the virtual network earlier in this task |
     | Performance | **Standard** |
@@ -554,7 +522,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG** |
+    | Resource group | **az30308c-labRG-[DeploymentID]** |
     | Replication Storage Account | the name of the storage account you created earlier in this lab | 
     | Virtual Network | **az30308c-migration-vnet** |
     | Subnet | **subnet0** |
