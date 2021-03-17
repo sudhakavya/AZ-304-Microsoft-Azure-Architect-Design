@@ -1,9 +1,3 @@
----
-lab:
-    title: '6: Implementing Azure SQL Database-Based Applications'
-    module: 'Module 6: Design a Solution for Databases'
----
-
 # Lab: Implementing Azure SQL Database-Based Applications
 # Student lab manual
 
