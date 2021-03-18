@@ -64,7 +64,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308a-labRG-[DeploymentID]** |
+    | Resource group | **az30308a-labRG** |
     | Host Public IP Address Name | **az30308a-hv-vm-pip** |
     | Virtual Network Name | **az30308a-hv-vnet** |
     | Host Network Interface1Name | **az30308a-hv-vm-nic1** |
@@ -229,7 +229,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30308b-labRG-[DeploymentID]** |
+    | Resource group | the name of a new resource group **az30308b-labRG** |
     | Migrate project | **az30308b-migrate-project** |
     | Geography | the name of your country or a geographical region |
 
@@ -243,7 +243,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | the name of a new resource group **az30308c-labRG-[DeploymentID]** |
+    | Resource group | the name of a new resource group **az30308c-labRG** |
     | Name | **az30308c-migration-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
@@ -267,7 +267,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value |
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG-[DeploymentID]** |
+    | Resource group | **az30308c-labRG** |
     | Name | **az30308c-test-vnet** |
     | Region | the name of the Azure region into which you deployed the virtual machine earlier in this lab |
 
@@ -291,7 +291,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG-[DeploymentID]** |
+    | Resource group | **az30308c-labRG** |
     | Storage account name | any globally unique name between 3 and 24 in length consisting of letters and digits |
     | Location | the name of the Azure region in which you created the virtual network earlier in this task |
     | Performance | **Standard** |
@@ -522,7 +522,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you are using in this lab |
-    | Resource group | **az30308c-labRG-[DeploymentID]** |
+    | Resource group | **az30308c-labRG** |
     | Replication Storage Account | the name of the storage account you created earlier in this lab | 
     | Virtual Network | **az30308c-migration-vnet** |
     | Subnet | **subnet0** |

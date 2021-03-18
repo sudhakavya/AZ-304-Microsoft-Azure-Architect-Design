@@ -42,7 +42,7 @@ Estimated Time: 120 minutes
 
 ## Lab Files
 
--  \\\\AZ304\\AllFiles\\Labs\\10\\azuredeploy30410suba.json
+-  C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\10\azuredeploy30410rga.parameters.json
 
 
 ## Instructions
@@ -58,13 +58,17 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Identify an available DNS name for an Azure VM deployment
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Click on the Azure Portal icon on the VM desktop and login with the Azure credentials from the Lab Environment output page.
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
+
+1. Select **Use existing** under Resource Group then select **az30410a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+
+   >Note: You can find the Deployment-id from the environment details tab.
 
 1. In the Cloud Shell pane, run the following to identify an available DNS name you will need to provide in the next task (substitute the placeholder `<custom-label>` with any valid DNS hostname which is likely to be globally unique and the placeholder `<Azure region>` with the name of the Azure region into which you want to deploy the Azure VM that will host an Active Directory domain controller):
 
@@ -83,31 +87,13 @@ The main tasks for this exercise are as follows:
 
 #### Task 2: Deploy an Azure VM running an AD DS domain controller by using an Azure Resource Manager QuickStart template
 
-1. In the Azure portal, in the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ304\\AllFiles\Labs\\10\\azuredeploy30410suba.json** into the Cloud Shell home directory.
-
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that you specified in the previous task):
-
-   ```powershell
-   $location = '<Azure region>'
-   ```
-   ```powershell
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30410subaDeployment `
-     -TemplateFile $HOME/azuredeploy30410suba.json `
-     -rgLocation $location `
-     -rgName 'az30410a-labRG'
-   ```
-
-1. In the Azure portal, close the **Cloud Shell** pane.
-
 1. From your lab computer, open another browser tab and navigate to the [https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain). 
 
 1. On the **Create a new Windows VM and create a new AD Forest, Domain and DC** page, select **Deploy to Azure**. This will automatically redirect the browser to the **Create an Azure VM with a new AD Forest** blade in the Azure portal.
 
 1. On the **Create an Azure VM with a new AD Forest** blade, select **Edit parameters**.
 
-1. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, select **\\\\AZ304\\AllFiles\Labs\\10\\azuredeploy30410rga.parameters.json**, select **Open**, and then select **Save**. 
+1. On the **Edit parameters** blade, select **Load file**, in the **Open** dialog box, select **C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\10\azuredeploy30410rga.parameters.json**, select **Open**, and then select **Save**. 
 
 1. On the **Create an Azure VM with a new AD Forest** blade, specify the following settings (leave others with their existing values):
 
