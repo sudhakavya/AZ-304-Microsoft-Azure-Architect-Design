@@ -29,17 +29,6 @@ After completing this lab, you will be able to:
 -  Migrate Hyper-V VMs by using Azure Migrate
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 120 minutes
-
-
 ### Exercise 0: Prepare the lab environment
 
 The main tasks for this exercise are as follows:
