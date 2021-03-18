@@ -1,8 +1,3 @@
----
-lab:
-    title: '4: Managing Azure AD Authentication and Authorization'
-    module: 'Module 4: Design Authentication and Authorization'
----
 
 # Lab: Managing Azure AD Authentication and Authorization
 # Student lab manual
@@ -33,17 +28,6 @@ After completing this lab, you will be able to:
  - Create and configure an Azure AD tenant
 
  - Integrate an AD DS forest with an Azure AD tenant
-
-
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 120 minutes
 
 
 ## Lab Files
