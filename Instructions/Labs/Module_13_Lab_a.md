@@ -30,24 +30,13 @@ After completing this lab, you will be able to:
 -  Trigger execution of Logic Apps in response to an event representing a change to a resource within a resource group
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 60 minutes
-
-
 ## Lab Files
 
--  \\\\AZ304\\AllFiles\\Labs\\04\\azuredeploy30304suba.json
+-  C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\04\azuredeploy30304suba.json
 
--  \\\\AZ304\\AllFiles\\Labs\\04\\azuredeploy30304rga.json
+-  C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\04\azuredeploy30304rga.json
 
--  \\\\AZ304\\AllFiles\\Labs\\04\\azuredeploy30304rga.parameters.json
+-  C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\04\azuredeploy30304rga.parameters.json
 
 ## Instructions
 
@@ -60,13 +49,17 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager template
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Click on the Azure Portal icon on the VM desktop and login with the Azure credentials from the Lab Environment output page.
 
 1. In the Azure portal, open **Cloud Shell** pane by selecting on the toolbar icon directly to the right of the search textbox.
 
 1. If prompted to select either **Bash** or **PowerShell**, select **PowerShell**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
+
+1. Select **Use existing** under Resource Group then select **az30304a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+
+   >Note: You can find the Deployment-id from the environment details tab.
 
 1. From the Cloud Shell pane, run the following to register the **Microsoft.EventGrid** provider in your subscription:
 
@@ -74,25 +67,9 @@ The main tasks for this exercise are as follows:
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.EventGrid'
    ```
 
-1. In the toolbar of the Cloud Shell pane, select the **Upload/Download files** icon, in the drop-down menu select **Upload**, and upload the file **\\\\AZ304\\AllFiles\Labs\\04\\azuredeploy30304suba.json** into the Cloud Shell home directory.
+1. From the Cloud Shell pane, upload the Azure Resource Manager template **C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\04\azuredeploy30304rga.json**.
 
-1. From the Cloud Shell pane, run the following to create a resource groups (replace the `<Azure region>` placeholder with the name of the Azure region that is available for deployment of Azure VMs in your subscription and which is closest to the location of your lab computer):
-
-   ```powershell
-   $location = '<Azure region>'
-   New-AzSubscriptionDeployment `
-     -Location $location `
-     -Name az30304subaDeployment `
-     -TemplateFile $HOME/azuredeploy30304suba.json `
-     -rgLocation $location `
-     -rgName 'az30304a-labRG'
-   ```
-
-      > **Note**: To identify Azure regions where you can provision Azure VMs, refer to [**https://azure.microsoft.com/en-us/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/)
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager template **\\\\AZ304\\AllFiles\Labs\\04\\azuredeploy30304rga.json**.
-
-1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **\\\\AZ304\\AllFilesLabs\\04\\azuredeploy30304rga.parameters.json**.
+1. From the Cloud Shell pane, upload the Azure Resource Manager parameter file **C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\04\azuredeploy30304rga.parameters.json**.
 
 1. From the Cloud Shell pane, run the following to deploy a Azure VM running Windows Server 2019 that you will be using in this lab:
 
@@ -159,7 +136,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Role | **Reader** |
-    | Assign access to | **Azure AD user, group, or service principal** |
+    | Assign access to | **User, group, or service principal** |
     | Select | **az30304aadsp** |
 
 
@@ -178,7 +155,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create an Azure logic app
 
-1. In the Azure portal, search for and select **Logic App** and, on the **Logic Apps** blade, select **+ Add**.
+1. In the Azure portal, search for and select **Logic App** and, on the **Logic Apps** blade, select **+ Add** then **+ Consumption**.
 
 1. On the **Basics** tab of the **Logic App** blade, specify the following settings (leave others with their default values):
 
@@ -223,7 +200,7 @@ The main tasks for this exercise are as follows:
     | Event Type Item - 1 | **Microsoft.Resources.ResourceWriteSuccess** |
     | Event Type Item - 2 | **Microsoft.Resources.ResourceDeleteSuccess** |
 
-1. n the **When a resource event occurs** tile, select **Add new parameter** and select **Subscription Name**
+1. In the **When a resource event occurs** tile, select **Add new parameter** and select **Subscription Name**
 
 1. In the **Subscription Name** text box, type **event-subscription-az30304b** and select **Save**.
 
@@ -257,17 +234,17 @@ The main tasks for this exercise are as follows:
 
 1. In the **Choose an action** pane, in the **Search connectors and actions** text box, type **Outlook**.
 
-1. In the list of results, select **Outlook.com**. 
+1. In the list of results, select **Office 365 Outlook**. 
 
-1. In the list of actions for **Outlook.com**, select **Send an email (V2)**.
+1. In the list of actions for **Office 365 Outlook**, select **Send an email (V2)**.
 
-1. In the **Outlook.com** pane, select **Sign in**. 
+1. In the **Office 365 Outlook** pane, select **Sign in**. 
 
 1. When prompted, authenticate by using the Microsoft Account you are using in this lab. 
 
 1. When prompted for the consent to grant Azure Logic App permissions to access Outlook resources, select **Yes**.
 
-1. In the **Outlook.com** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
+1. In the **Office 365 Outlook** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
 
 1. In the **Send an email** pane, specify the following settings and select **Save**:
 
@@ -339,20 +316,3 @@ The main tasks for this exercise are as follows:
 1. Navigate to the inbox of the email account you specified in the previous exercise and verify that includes an email generated by the logic app.
 
 
-#### Task 3: Remove Azure resources deployed in the lab
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30304*'
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30304*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-1. Close the Cloud Shell pane.

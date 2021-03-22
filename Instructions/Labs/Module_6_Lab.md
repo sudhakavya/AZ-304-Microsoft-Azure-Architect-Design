@@ -25,17 +25,6 @@ After completing this lab, you will be able to:
 -  Configure .NET Core-based console apps that use Azure SQL Database as their data store
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 60 minutes
-
-
 ## Lab Files
 
 -  None
@@ -52,7 +41,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Create Azure SQL Database 
 
-1. From your lab computer, start a web browser, navigate to the [Azure portal](https://portal.azure.com), and sign in by providing credentials of a user account with the Owner role in the subscription you will be using in this lab.
+1. Click on the Azure Portal icon on the VM desktop and login with the Azure credentials from the Lab Environment output page.
 
 1. In the Azure portal, search for and select **SQL database** and, on the **SQL databases** blade, select **+ Add**.
 
@@ -68,10 +57,12 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Server name | any valid, globally unique name | 
+    | Server name | **sqlserver{DeploymentId}** | 
     | Server admin login | **sqladmin** |
     | Password | **Pa55w.rd1234** |
     | Location | the name of an Azure region where you can provision SQL databases |
+
+    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. Next to the **Compute + storage** label, select the **Configure database** link.
 
@@ -151,7 +142,11 @@ The main tasks for this exercise are as follows:
 
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
+1. If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Show advanced settings**.
+
+1. Select **Use existing** under Resource Group then select **az30303a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
+
+    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. From the Cloud Shell pane, run the following to create a new folder named **az30303a1** and set it as your current directory:
 
@@ -291,27 +286,3 @@ The main tasks for this exercise are as follows:
 
 1. Note that the execution of the console app will this time be successful and that it returns the same results as those displayed in the query editor within the Azure portal SQL database blade. 
 
-
-#### Task 6: Remove Azure resources deployed in the lab
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30303')]".name --output tsv
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```sh
-   az group list --query "[?starts_with(name,'az30303')]".name --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-1. From the Cloud Shell pane, run the following to remove the folder named **az30303a1**:
-
-   ```sh
-   rm -r ~/az30303a1
-   ```
-
-1. Close the Cloud Shell pane.

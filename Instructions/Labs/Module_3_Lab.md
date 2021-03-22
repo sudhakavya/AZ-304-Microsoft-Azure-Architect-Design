@@ -29,17 +29,6 @@ After completing this lab, you will be able to:
 -  Migrate Hyper-V VMs by using Azure Migrate
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 120 minutes
-
-
 ### Exercise 0: Prepare the lab environment
 
 The main tasks for this exercise are as follows:
@@ -569,22 +558,3 @@ The main tasks for this exercise are as follows:
    >**Note**: Migration is supposed to be a non-reversible action.
 
 
-#### Task 4: Remove Azure resources deployed in the lab
-
-1. Within the Remote Desktop session to **az30308a-vm0**, in the browser window displaying the Azure portal, start a PowerShell session within the Cloud Shell pane.
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30308*'
-   ```
-
-   > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30308*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-1. Close the Cloud Shell pane.

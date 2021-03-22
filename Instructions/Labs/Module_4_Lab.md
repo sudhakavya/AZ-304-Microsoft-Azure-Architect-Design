@@ -29,17 +29,6 @@ After completing this lab, you will be able to:
  - Integrate an AD DS forest with an Azure AD tenant
 
 
-## Lab Environment
-  
-Windows Server admin credentials
-
--  User Name: **Student**
-
--  Password: **Pa55w.rd1234**
-
-Estimated Time: 120 minutes
-
-
 ## Lab Files
 
 -  C:\AllFiles\AZ-304-Microsoft-Azure-Architect-Design-master\Allfiles\Labs\10\azuredeploy30410rga.parameters.json
@@ -424,65 +413,3 @@ The main tasks for this exercise are as follows:
     > **Note**: Completing the multi-factor authentication configuration is optional. If you proceed, you will need to designate your mobile device as an authentication phone or to use it to run a mobile app.
 
 
-#### Task 4: Remove Azure resources deployed in the lab
-
-1. Within the Remote Desktop session to **az30410a-vm1**, start Internet Explorer and browse to the Microsoft Online Services Sign-In Assistant for IT Professionals RTW at [https://go.microsoft.com/fwlink/p/?LinkId=286152](https://www.microsoft.com/en-us/Download/confirmation.aspx?id=28177). 
-
-1. On the Microsoft Online Services Sign-In Assistant for IT Professionals RTW download page, select **Download**, on the **Choose the download you want** page, select **en\msoidcli_64.msi**, and select **Next**. 
-
-1. When prompted, run **Microsoft Online Services Sign-in Assistant Setup** with the default options.
-
-1. Once the setup completes, within the Remote Desktop session to **az30410a-vm1**, start **Windows PowerShell** console.
-
-1. In the **Administrator: Windows PowerShell** window, run the following to install the required PowerShell module:
-
-   ```powershell
-   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-   Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
-   Install-Module MSOnline -Force
-   ```
-1. In the **Administrator: Windows PowerShell** window, run the following to authenticate to the **Adatum Lab** Azure AD tenant:
-
-   ```powershell
-   Connect-MsolService
-   ```
-
-1. When prompted to authenticate, provide the credentials of the **az30410-aaduser1** user account.
-
-1. In the **Administrator: Windows PowerShell** window, run the following to disable Azure AD Connect synchronization:
-
-   ```powershell
-   Set-MsolDirSyncEnabled -EnableDirSync $false -Force
-   ```
-
-    > **Note**: If you receive an error message at this point, you might have to wait for up to 12 hours and try again.
-
-1. From the lab computer, in the browser window displaying the Azure portal, switch to the **Adatum Lab** tenant, navigate to the **Azure Active Directory Premium P2 - Licensed users** blade, select the user accounts to which you assigned licenses in this lab, select **Remove license**, and, when prompted to confirm, select **OK**.
-
-1. In the Azure portal, navigate to the **Users - All users** blade and ensure that all user accounts you created in this lab are no longer listed as **Directory synced**.
-
-1. On the **Users - All users** blade, select each user accounts you created in this lab and select **Delete** in the toolbar. 
-
-1. Navigate to the **Adatum Lab - Overview** blade of the Adatum Lab Azure AD tenant, select **Delete tenant**, on the **Delete directory 'Adatum Lab'** blade, select the **Get permission to delete Azure resources** link, on the **Properties** blade of Azure Active Directory, set **Access management for Azure resources** to **Yes** and select **Save**.
-
-1. Sign out from the Azure portal and sign in back. 
-
-1. Navigate back to the **Delete directory 'Adatum Lab'** blade and select **Delete**.
-
-1. On the lab computer, in the browser window displaying the Azure portal, make sure you are connected to the original Azure Active Directory tenant, and start a PowerShell session within the Cloud Shell pane.
-
-1. From the Cloud Shell pane, run the following to list the resource group you created in this exercise:
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30410*'
-   ```
-
-    > **Note**: Verify that the output contains only the resource group you created in this lab. This group will be deleted in this task.
-
-1. From the Cloud Shell pane, run the following to delete the resource group you created in this lab
-
-   ```powershell
-   Get-AzResourceGroup -Name 'az30410*' | Remove-AzResourceGroup -Force -AsJob
-   ```
-
-1. Close the Cloud Shell pane.
