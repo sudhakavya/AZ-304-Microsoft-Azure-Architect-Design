@@ -1,4 +1,3 @@
-
 # Lab: Implement Azure Logic Apps integration with Azure Event Grid
 # Student lab manual
 

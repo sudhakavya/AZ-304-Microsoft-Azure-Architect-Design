@@ -1,4 +1,3 @@
-
 # Lab: Managing Azure AD Authentication and Authorization
 # Student lab manual
 

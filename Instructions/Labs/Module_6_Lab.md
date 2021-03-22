@@ -1,5 +1,3 @@
-
-
 # Lab: Implementing Azure SQL Database-Based Applications
 # Student lab manual
 
