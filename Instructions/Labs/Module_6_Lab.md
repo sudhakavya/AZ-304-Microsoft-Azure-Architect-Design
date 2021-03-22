@@ -59,10 +59,12 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Server name | any valid, globally unique name | 
+    | Server name | **sqlserver{DeploymentId}** | 
     | Server admin login | **sqladmin** |
     | Password | **Pa55w.rd1234** |
     | Location | the name of an Azure region where you can provision SQL databases |
+
+    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. Next to the **Compute + storage** label, select the **Configure database** link.
 
@@ -146,7 +148,7 @@ The main tasks for this exercise are as follows:
 
 1. Select **Use existing** under Resource Group then select **az30303a-labRG** and enter **shellstorageDeployment-id** for storage account name and Enter **filestorageDeployment-id** then click on **Create Storage**.
 
-   >Note: You can find the Deployment-id from the environment details tab. 
+    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. From the Cloud Shell pane, run the following to create a new folder named **az30303a1** and set it as your current directory:
 
