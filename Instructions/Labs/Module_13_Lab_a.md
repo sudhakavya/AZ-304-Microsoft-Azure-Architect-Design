@@ -194,7 +194,7 @@ The main tasks for this exercise are as follows:
 
     | Setting | Value | 
     | --- | --- |
-    | Subscription | the value of subscription **Id** property you identified earlier in this exercise |
+    | Subscription | Select your subscription |
     | Resource Type | **Microsoft.Resources.resourceGroups** |
     | Resource Name | **az30304a-labRG** |
     | Event Type Item - 1 | **Microsoft.Resources.ResourceWriteSuccess** |
@@ -298,9 +298,9 @@ The main tasks for this exercise are as follows:
 
 1. In the Azure portal, navigate to the **az30304a-labRG** resource group and, in the list of resources, select the entry representing the **az30304a-vm0** Azure VM.
 
-1. On the **az30304a-vm0** blade, in the **Settings** section, select **Size**.
+1. On the **az30304a-vm0** blade, in the **Overview** Observe Size of VM set to **Standard D2s v3 (2 vcpus, 8 GiB memory)**, Now in the **Settings** section, select **Size**.
 
-1. On the **az30304a-vm0 | Size** blade, select a size different from the one currently set and select **Resize** and verify that the resize operation completed successfully. 
+1. On the **az30304a-vm0 | Size** blade, select size **B2ms** and select **Resize** and verify that the resize operation completed successfully. 
 
 1. Navigate back to the **az30304b-logicapp1** blade, select **Refresh**, and note that the **Runs history** includes entries corresponding to changes of the state of the Azure VM.
 
