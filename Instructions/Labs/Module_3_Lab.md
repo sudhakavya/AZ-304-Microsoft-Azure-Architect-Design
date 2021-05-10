@@ -40,12 +40,12 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Deploy an Azure VM by using an Azure Resource Manager QuickStart template
 
-1. Click on the Azure Portal icon on the LAB VM desktop and login with the Azure credentials from the Lab Environment output page.
+1. Click on the Azure Portal icon on the LAB VM desktop and login with the Azure credentials from the Lab Environment details page.
 
-1. Open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network) and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
+1. Open another browser tab, navigate to the [301-nested-vms-in-virtual-network Azure QuickStart template](https://github.com/Azure/azure-quickstart-templates/tree/master/demos/nested-vms-in-virtual-network) and select **Deploy to Azure**. This will automatically redirect the browser to the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal.
 
     ``` url
-    https://github.com/Azure/azure-quickstart-templates/tree/master/301-nested-vms-in-virtual-network
+    https://github.com/Azure/azure-quickstart-templates/tree/master/demos/nested-vms-in-virtual-network
     ```
 
 1. On the **Hyper-V Host Virtual Machine with nested VMs** blade in the Azure portal, specify the following settings (leave others with their default values):
