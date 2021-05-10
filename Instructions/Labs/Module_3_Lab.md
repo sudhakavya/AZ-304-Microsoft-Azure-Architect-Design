@@ -62,7 +62,6 @@ The main tasks for this exercise are as follows:
     | Host Admin Username | **Student** |
     | Host Admin Password | **Pa55w.rd1234** |
 
-    **Note**: Deployment ID can be obtained from the Lab Environment output page.
 
 1. On the **Hyper-V Host Virtual Machine with nested VMs** blade, select **Review + create** and then select **Create**.
 
@@ -99,9 +98,11 @@ The main tasks for this exercise are as follows:
 
 1. Within the Remote Desktop session to **az30308a-hv-vm**, in the Server Manager window, click **Local Server**, click the **On** link next to the **IE Enhanced Security Configuration** label, and, in the **IE Enhanced Security Configuration** dialog box, select both **Off** options and then click **OK**.
 
+1. From the Remote Desktop session, Start Internet Explorer, and navigate to this url to download microsoft edge browser setup -> https://go.microsoft.com/fwlink/?linkid=2069324&Channel=Stable&language=en
+
 1. From the Remote Desktop session, open File Explorer and navigate to the **F:**. Create a folder named **VHDs**.
 
-1. Within the Remote Desktop session to **az30308a-hv-vm**, start Internet Explorer, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder. 
+1. Within the Remote Desktop session to **az30308a-hv-vm**, start Microsoft Edge, browse to [Windows Server Evaluations](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019), and download the Windows Server 2019 **VHD** file to the **F:\VHDs** folder. 
     
     ```url
     https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019
