@@ -209,7 +209,7 @@ The main tasks for this exercise are as follows:
 
 1. In the the Azure portal, on the Logic App Designer blade of the newly provisioned Azure logic app, select **+ New step**. 
 
-1. In the choose an action tile, use the **Search connectors and triggers** text box, to search for **Condition**, in the list of results, in the **Actions** column, select **Condition** to add it to the designer workspace.
+1. In the choose an operation tile, use the **Search connectors and actions** text box, to search for **Condition**, in the list of results, in the **Actions** column, select **Condition** to add it to the designer workspace.
 
 1. Select the ellipsis symbol in the upper right corner of the **Condition** tile, in the pop-up menu, select **Rename**, and replace **Condition** with the text **If a virtual machine in the resource group has changed**. 
 
@@ -234,17 +234,17 @@ The main tasks for this exercise are as follows:
 
 1. In the **Choose an action** pane, in the **Search connectors and actions** text box, type **Outlook**.
 
-1. In the list of results, select **Office 365 Outlook**. 
+1. In the list of results, select **Outlook.com**. 
 
-1. In the list of actions for **Office 365 Outlook**, select **Send an email (V2)**.
+1. In the list of actions for **Outlook.com**, select **Send an email (V2)**.
 
-1. In the **Office 365 Outlook** pane, select **Sign in**. 
+1. In the **Outlook.com** pane, select **Sign in**. 
 
 1. When prompted, authenticate by using the Microsoft Account you are using in this lab. 
 
 1. When prompted for the consent to grant Azure Logic App permissions to access Outlook resources, select **Yes**.
 
-1. In the **Office 365 Outlook** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
+1. In the **Outlook.com** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
 
 1. In the **Send an email** pane, specify the following settings and select **Save**:
 
@@ -272,7 +272,7 @@ The main tasks for this exercise are as follows:
 
 #### Task 1: Configure event subscription
 
-1. In the Azure portal, navigate to the **az30304b-logicapp1** blade, in the **Summary** section, select **See trigger history**. 
+1. In the Azure portal, navigate to the **az30304b-logicapp1** blade, in the **Summary** section, select **Trigger history**. 
 
 1. On the **When_a_resource_event_occurs** blade, copy the value of the **Callback url [POST]** text box.
 
