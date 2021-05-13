@@ -232,19 +232,19 @@ The main tasks for this exercise are as follows:
 
 1. In the the Azure portal, on the Logic App Designer blade of the newly provisioned Azure logic app, in the **True** tile, select **Add an action**. 
 
-1. In the **Choose an action** pane, in the **Search connectors and actions** text box, type **Outlook**.
+1. In the **Choose an action** pane, in the **Search connectors and actions** text box, type **office 365 outlook**.
 
-1. In the list of results, select **Outlook.com**. 
+1. In the list of results, select **Office 365 outlook**. 
 
-1. In the list of actions for **Outlook.com**, select **Send an email (V2)**.
+1. In the list of actions for **office 365 outlook**, select **Send an email (V2)**.
 
-1. In the **Outlook.com** pane, select **Sign in**. 
+1. In the **office 365 outlook** pane, select **Sign in**. 
 
 1. When prompted, authenticate by using the Microsoft Account you are using in this lab. 
 
 1. When prompted for the consent to grant Azure Logic App permissions to access Outlook resources, select **Yes**.
 
-1. In the **Outlook.com** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
+1. In the **office 365 outlook** pane, select the ellipsis symbol in the upper right corner of the **Send an email (V2)** tile, in the pop-up menu, select **Rename**, and replace **Send an email (v2)** with the text **Send an email**. 
 
 1. In the **Send an email** pane, specify the following settings and select **Save**:
 
