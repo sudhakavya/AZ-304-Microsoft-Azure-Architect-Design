@@ -50,7 +50,7 @@ The main tasks for this exercise are as follows:
     | Setting | Value | 
     | --- | --- |
     | Subscription | the name of the Azure subscription you will be using in this lab |
-    | Resource group | select the existing resource group with name **az30303a-labRG-deployemntID** | 
+    | Resource group | select the existing resource group with name **az30303a-labRG-deploymentID** | 
     | Database name | **az30303a-db1** | 
 
 1. Directly below the **Server** drop down list, select the **Create new** and, on the **New server** blade, specify the following settings and select **OK** (leave others with their default values):
