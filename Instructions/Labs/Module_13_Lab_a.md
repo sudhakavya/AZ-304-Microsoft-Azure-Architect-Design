@@ -103,7 +103,7 @@ The main tasks for this exercise are as follows:
    ```powershell
    $password = 'Pa55w.rd1234.@z304'
    $securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
-   $az30304aadapp = New-AzADApplication -DisplayName 'az30304aadsp' -HomePage 'http://az30304aadsp' -IdentifierUris 'http://az30304aadsp' -Password $securePassword
+   $az30304aadapp = New-AzADApplication -DisplayName 'az30304aadsp' -HomePage 'http://az303045aadsp' -IdentifierUris 'http://az303045aadsp' -Password $securePassword
    ```
 
 1. From the Cloud Shell pane, run the following to create a new Azure AD service principal associated with the application you created in the previous step:
@@ -137,7 +137,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Role | **Reader** |
     | Assign access to | **User, group, or service principal** |
-    | Select | **az30304aadsp** |
+    | Select | **az303045aadsp** |
 
 
 ### Exercise 2: Implement an Azure logic app
@@ -286,7 +286,7 @@ The main tasks for this exercise are as follows:
     | --- | --- |
     | Name | **event-subscription-az30304a-LabRG** |
     | Event Schema | **Event Grid Schema** |
-    | System Topic name | **az30304b-eventgridtopic** |
+    | System Topic name | Already it will exist if not provide the name eg:az30304b-eventgridtopic |
     | Filter to Event Types | **Resource Write Success**, **Resource Delete Success**, **Resource Action Success** |
     | Endpoint Type | **Web Hook** | 
     | Endpoint | the URL string you copied at the beginning of this task |
